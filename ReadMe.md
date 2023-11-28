@@ -27,8 +27,9 @@ Then User Completed task percentage should be greater than 50%
 
 Provide instructions on how to get a copy of your project and how to install the necessary dependencies.
 
-### Building the Project
+### Building and running the Project
 
 ```bash
-mvn clean install
+ mvn clean test -DsuiteXmlFile=testng.xml
+
 
