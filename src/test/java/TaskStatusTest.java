@@ -32,7 +32,7 @@ public class TaskStatusTest extends BaseTest {
 
             double lat = Double.parseDouble(geo.getString(CONS.lat));
             double lng = Double.parseDouble(geo.getString(CONS.longitude));
-
+       // Getting userID of fancode city according to given condition
             if (lat >= -40 && lat <= 5 && lng >= 5 && lng <= 100) {
                 userID.add(user.getInt("id"));
             }
@@ -45,7 +45,7 @@ public class TaskStatusTest extends BaseTest {
             int taskCompleted=0;
             int taskIncomplete=0;
             for (int i = 0; i < todoArrayUserList.length(); i++) {
-
+              // getting total completed task and incompleted task
                 int currentUserId=todoArrayUserList.getJSONObject(i).getInt(CONS.userId);
                 if(userId == currentUserId){
                     JSONObject user = todoArrayUserList.getJSONObject(i);
@@ -57,6 +57,7 @@ public class TaskStatusTest extends BaseTest {
                     }
                 }
         }
+            // Returning Users from fancode city having task percentage greater than 50%
             if(taskCompleted>taskIncomplete && taskCompleted!=0){
                 System.out.println("UserId: "+userId+" has task percentage greater than 50%");
             }
